@@ -30,7 +30,7 @@ require 'action_controller'
 require 'rspec/rails'
 require 'database_cleaner'
 RSpec.configure do |config|
-  config.fixture_paths = ["#{plugin_test_dir}/fixtures"]
+  config.fixture_path = "#{plugin_test_dir}/fixtures"
   config.use_transactional_fixtures = true
   config.after(:suite) do
     ActiveRecord::Tasks::DatabaseTasks.drop db_config[ENV['DB']] unless /sqlite/ === ENV['DB']
